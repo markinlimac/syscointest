@@ -1,0 +1,26 @@
+{
+  "name": "syscointest",
+  "version": "1.0.0",
+  "description": "Instalar [nodemon](https://github.com/remy/nodemon), para fazer monitoramento do servidor em node.js <br><code>sudo npm install -g nodemon</code><br> Instalar [restify](https://github.com/restify/node-restify), framework do node.js, para trabalhar com as rotas rest <br><code>sudo npm install restify</code><br> Instalar [restify errors](https://github.com/restify/node-restify), para trabalhar com as respostas de erro da requisição http <br><code></code><br> Instalar [knex](https://github.com/knex/knex), módulo para acessar o MySql <br><code></code><br>",
+  "main": "index.js",
+  "dependencies": {
+    "knex": "^0.19.5",
+    "mysql": "^2.17.1",
+    "restify": "^8.4.0",
+    "restify-errors": "^8.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/markinlimac/syscointest.git"
+  },
+  "author": "Marco Antonio de Lima Costa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/markinlimac/syscointest/issues"
+  },
+  "homepage": "https://github.com/markinlimac/syscointest#readme"
+}
