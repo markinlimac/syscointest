@@ -24,15 +24,9 @@ server.get('/provasyscoin', (req, res, next) =>  {
   
   knex('SysCoin').then((dados) => {
     if('"'+dados[0].user+'"' == req.query.user && '"'+dados[0].password+'"' == req.query.password){
-      // var mensagem = Object.keys(dados[0])[2]; 
-      // var valor = 
-      // var saida = {
-      // Object.values(dados[0])[2];
-      // }
-      // res.send(saida)
-      res.send(Object.keys(dados[0])[2]+": "+Object.values(dados[0])[2]);
+      knex('SysCoin').select('mensagem').where({user: dados[0].user}).then((mensagem) => res.send(mensagem[0]));
     } else {
-      res.send(dados[1]);
+      knex('SysCoin').select('mensagem').where({user: dados[1].user}).then((mensagem) => res.send(mensagem[0]));
     }
   }, next)
   
