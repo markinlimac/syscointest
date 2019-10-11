@@ -9,10 +9,10 @@ const server = restify.createServer({
 var knex = require('knex')({
   client: 'mysql',
   connection: {
-    host : '127.0.0.1',
-    user : 'root',
-    password : 'raposa_@1',
-    database : 'syscoinTest'
+    host : 'us-cdbr-iron-east-05.cleardb.net',
+    user : 'b4eb14460dd0e2',
+    password : '7839a54f',
+    database : 'heroku_134b9f7af491cc5'
   }
 });
 
