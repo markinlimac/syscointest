@@ -23,7 +23,17 @@ server.use(restify.plugins.bodyParser());
 server.get('/provasyscoin', (req, res, next) =>  {
   
   knex('SysCoin').then((dados) => {
-    res.send(dados);
+    if('"'+dados[0].user+'"' == req.query.user && '"'+dados[0].password+'"' == req.query.password){
+      // var mensagem = Object.keys(dados[0])[2]; 
+      // var valor = 
+      // var saida = {
+      // Object.values(dados[0])[2];
+      // }
+      // res.send(saida)
+      res.send(Object.keys(dados[0])[2]+": "+Object.values(dados[0])[2]);
+    } else {
+      res.send(dados[1]);
+    }
   }, next)
   
 });
