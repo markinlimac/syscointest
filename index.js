@@ -23,10 +23,13 @@ server.use(restify.plugins.bodyParser());
 server.get('/provasyscoin', (req, res, next) =>  {
   
   knex('SysCoin').then((dados) => {
-    if('"'+dados[0].user+'"' == req.query.user && '"'+dados[0].password+'"' == req.query.password){
-      knex('SysCoin').select('mensagem').where({user: dados[0].user}).then((mensagem) => res.send(mensagem[0]));
-    } else {
-      knex('SysCoin').select('mensagem').where({user: dados[1].user}).then((mensagem) => res.send(mensagem[0]));
+    for (quantidade in dados){
+      if('"'+dados[quantidade].user+'"' == req.query.user && '"'+dados[quantidade].password+'"' == req.query.password){
+        knex('SysCoin').select('mensagem').where({user: dados[quantidade].user}).then((mensagem) => res.send(mensagem[0]));
+        break;
+      } else {
+        knex('SysCoin').select('mensagem').where({user: dados[1].user}).then((mensagem) => res.send(mensagem[0]));
+      }
     }
   }, next)
   
